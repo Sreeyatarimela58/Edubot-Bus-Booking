@@ -37,7 +37,7 @@ const BookingsView = () => {
     try {
       setCancellingBooking(true)
       const token = localStorage.getItem("adminToken")
-      const response = await fetch(`http://localhost:2000/api/bookings/${bookingId}`, {
+      const response = await fetch(`https://edubot-bus-booking.onrender.com/api/bookings/${bookingId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -74,7 +74,7 @@ const BookingsView = () => {
   const fetchBookings = async () => {
     try {
       const token = localStorage.getItem("adminToken")
-      let url = "http://localhost:2000/api/admin/bookings"
+      let url = "https://edubot-bus-booking.onrender.com/api/admin/bookings"
 
       // Add query parameters for date range if provided
       if (startDate && endDate) {

@@ -45,7 +45,7 @@ const AdminDashboard = () => {
       try {
         setLoading(true)
         const token = localStorage.getItem("adminToken")
-        const response = await axios.get("http://localhost:2000/api/admin/dashboard-stats", {
+        const response = await axios.get("https://edubot-bus-booking.onrender.com/api/admin/dashboard-stats", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
