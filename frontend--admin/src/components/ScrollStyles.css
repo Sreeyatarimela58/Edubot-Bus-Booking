@@ -1,0 +1,89 @@
+/* src/components/ScrollStyles.css */
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e57373;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d32f2f;
+}
+
+/* Section transitions */
+section {
+  transition: opacity 0.3s ease-in-out;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* Active section highlight */
+section.active {
+  opacity: 1;
+}
+
+section:not(.active) {
+  opacity: 0.95;
+}
+
+/* Sidebar active item indicator */
+.sidebar-item.active {
+  position: relative;
+}
+
+.sidebar-item.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background-color: #e57373;
+  border-radius: 2px;
+}
+
+/* Smooth transition for sidebar items */
+.sidebar-item {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Section heading animations */
+section h2 {
+  position: relative;
+  display: inline-block;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background-color: #e57373;
+  transition: width 0.3s ease-in-out;
+}
+
+section.active h2::after {
+  width: 100%;
+}
